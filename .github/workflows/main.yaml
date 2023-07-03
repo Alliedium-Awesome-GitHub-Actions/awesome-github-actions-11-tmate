@@ -16,9 +16,8 @@ jobs:
       - name: Print OS-release
         run: cat /etc/os-release
         
-      - name: Get vars 
-        run: | 
-          gh secret list -u
+      - name: Run tests
+        run: npm test
         
       - name: Setup tmate session
         if: ${{ failure() }}
